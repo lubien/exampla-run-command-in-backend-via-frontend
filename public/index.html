@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Olá express</p>
+
+    <button id="send">Pedir do servidor</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $btn = document.getElementById('send')
+            $btn.addEventListener('click', async() => {
+                const res = await fetch('/outro')
+                const json = await res.json()
+                console.log(json)
+            })
+        })
+    </script>
+</body>
+</html>
